@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "loader": "node run-loader.js",
-    "build": "webpack",
-    "sprites": "node ./src/sprites-loader.js"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

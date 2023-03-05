@@ -1,25 +1,19 @@
 const path = require('path')
+const MyPlugin = require('./plugins/my-plugin')
 
 module.exports = {
+  mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'main.js'
   },
   module: {
-    rules: [
-      {
-        test: /\.txt$/,
-        use: [
-          path.join(__dirname, './src/emit-loader.js'),
-          {
-            loader: path.join(__dirname, './src/raw-loader.js'),
-            options: {
-              name: 'test',
-            },
-          },
-        ]
-      }
-    ]
-  }
+    rules: []
+  },
+  plugins: [
+    new MyPlugin({
+      name: 'my plugin'
+    })
+  ]
 }
