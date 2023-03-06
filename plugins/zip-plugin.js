@@ -23,7 +23,7 @@ module.exports = class ZipPlugin {
         // content 是 buffer
         // console.log(content)
         const outputPath = path.join(compilation.options.output.path,
-          this.options.filename
+          this.options.filename + '.zip'
         )
         // 获取相对路径
         const opputRelativePath = path.relative(compilation.options.output.path, outputPath)
