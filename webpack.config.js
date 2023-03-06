@@ -1,5 +1,6 @@
 const path = require('path')
 const MyPlugin = require('./plugins/my-plugin')
+const ZipPlugin = require('./plugins/zip-plugin')
 
 module.exports = {
   mode: 'production',
@@ -14,6 +15,9 @@ module.exports = {
   plugins: [
     new MyPlugin({
       name: 'my plugin'
+    }),
+    new ZipPlugin({
+      filename: 'offline'
     })
   ]
 }
